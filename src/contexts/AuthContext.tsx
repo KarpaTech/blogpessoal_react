@@ -1,6 +1,5 @@
-import { useState, type ReactNode } from "react";
+import { createContext, useState, type ReactNode } from "react";
 import type UsuarioLogin from "../models/UsuarioLogin";
-import { createContext } from "vm";
 import { login } from "../services/Service";
 
 interface AuthContextProps {
@@ -24,7 +23,7 @@ export function AuthProvider ({ children }: AuthProviderProps) {
     usuario: '',
     foto: '',
     senha: '',
-    token: '',
+    token: ''
     })
 
     const [isLoading, setIsLoading] = useState(false)
