@@ -1,6 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import type Usuario from "../../models/Usuario";
-import { FunctionIcon } from "@phosphor-icons/react";
+// import { FunctionIcon } from "@phosphor-icons/react";
 import { cadastrarUsuario } from "../../services/Service";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
@@ -64,6 +64,7 @@ function Cadastro() {
       <div
         className="grid grid-cols-1 lg:grid-cols-2 h-screen 
             place-items-center font-bold"
+            
       >
         <div className="fundoCadastro hidden lg:block"></div>
         <form
