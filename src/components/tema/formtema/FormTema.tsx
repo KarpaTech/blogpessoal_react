@@ -1,11 +1,16 @@
-import {useContext,useEffect,useState,type ChangeEvent,type FormEvent,} from "react";
+import {
+  useContext,
+  useEffect,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import { AuthContext } from "../../contexts/AuthContext";
-import type Tema from "../../models/Tema";
-import { ToastAlerta } from "../../utils/ToastAlerta";
-import { buscar, atualizar, cadastrar } from "../../services/Service";
-
+import { AuthContext } from "../../../contexts/AuthContext";
+import type Tema from "../../../models/Tema";
+import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
   const navigate = useNavigate();
@@ -97,7 +102,8 @@ function FormTema() {
         {id === undefined ? "Cadastrar Tema" : "Editar Tema"}
       </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+      <form className="w-1/2 flex flex-col gap-4" 
+      onSubmit={gerarNovoTema}>
         <div className="flex flex-col gap-2">
           <label htmlFor="descricao">Descrição do Tema</label>
           <input

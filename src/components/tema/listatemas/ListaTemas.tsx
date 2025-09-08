@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import type Tema from "../../../models/Tema";
 import { buscar } from "../../../services/Service";
 import CardTema from "../cardtema/CardTema";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaTemas() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function ListaTemas() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado!", "info");
       navigate("/");
     }
   }, [token]);
@@ -47,9 +48,7 @@ function ListaTemas() {
     <>
       {isLoading && (
         <div className="flex justify-center w-full my-8">
-          <SyncLoader color="#3agb24" 
-          size={24} 
-          />
+          <SyncLoader color="#312e81" size={32} />
         </div>
       )}
 
